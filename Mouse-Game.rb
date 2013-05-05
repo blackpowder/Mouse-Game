@@ -24,7 +24,7 @@ def guessfour()
 	puts "Mouse :\"Place the more secure in this house.\""
 	puts "Mouse :\"It's 4 number between 0 and 10\""
 	puts "Mouse :\"Give me this numbers in the correct order\""
-	puts "Mouse :\"write a space between each number:\""
+	puts "Mouse :\"Don't write any spaces between each numbers:\""
 	puts "Mouse :\"You have 10 try :\""
 	puts ""
 
@@ -65,7 +65,7 @@ end
 
 		if correct_count == 4
 			puts "Well done"
-			puts "Congratulation ! You found all answer !"
+			puts "Congratulation ! You found all answers !"
 			puts "You win the game !"
 			patate = true
 			Process.exit(0)
