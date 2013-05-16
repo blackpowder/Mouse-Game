@@ -2,7 +2,7 @@ def prompt
 	print "> "
 	gets.chomp
 end
-#
+
 def try
 	puts "-------- Try again ---------"
 end
@@ -27,42 +27,38 @@ def guessfour
 	puts "Mouse :\"Don't write any spaces between each numbers:\""
 	puts "Mouse :\"You have 10 try :\""
 	puts ""
-
 	a = rand(0...10)
 	b = rand(0...10)
 	c = rand(0...10)
 	d = rand(0...10)
-
 	#puts "#{a} #{b} #{c} #{d}"
-
 	numbers = [a, b , c, d]
-	#puts "#{numbers}"
-	
+	#puts "#{numbers}"	
 	n = 0
 	patate = false
 
 	while true
+		correct_count = 0
+		n = n + 1
 
-	correct_count = 0
-	n = n + 1
+		print " Try #{n} "
+		next_move = prompt()
 
-	print " Try #{n} "
-	next_move = prompt()
-
-	guesses = next_move.split(//)
-	#puts "#{guesses}"
-	# check they have entered the correct number of guesses
-	place = 0
-	guesses.each do |guess|
+		guesses = next_move.split(//)
+		#puts "#{guesses}"
+		# check they have entered the correct number of guesses
+		place = 0
+		guesses.each do |guess|
 		#puts "guess = #{guess}"
-		#place = guesses.index(guess)
-		#puts "place = #{place}"	
-		if numbers[place] == guess.to_i
-		correct_count+=1
+		#puts "place = #{place}"
+
+
+			if numbers[place] == guess.to_i
+			correct_count+=1
 		#correct_count = correct_count + 1
-		end 
-		place += 1
-end
+			end 
+			place += 1
+		end
 
 		if correct_count == 4
 			puts "Well done"
@@ -76,39 +72,11 @@ end
 				puts "You lost ! The answer was #{a} #{b} #{c} #{d}"
 
 				over()
-		end
-		end
+			end
+	end
 end
-
-
-
-
-
-		
-	
-		#determine if the guess in the corresponding position in guesses is correct - if so, increase correct_count
-		#use index method to figure out which guess to check
 	
 end
-
-	#if correct count is 4 then they win
-	
-	
-
-
-
-
-
-
-
-	#if next_move.include? "#{a}" and "#{b}" and "#{c}" and "#{d}"
-	#	puts 
-
-#	end
-
-
-
-
 
 def french
 	puts "Mouse : \"I love Paris\""
@@ -125,32 +93,18 @@ def french
 		puts "Mouse : \"Try again !\""
 		puts "Mouse : \"I will give you the letters and find the good order\""
 		puts "Mouse : \"[ U O S S I R]"
-
 		next_move = prompt()
 
-			if next_move.downcase != "souris" 
-				puts "Mouse : \"It's not correct\""
-				over()
-
-			else 
-				puts "Mouse : \"Well done !!!\""
-				puts ""
-				guessfour()
-			end
-
-			
-
-			#if next_move == "Souris" || "souris" || "SOURIS"
-				#puts "Mouse : \"Well done !!!\""
-				#puts ""
-				#guessfour()
-			#else
-				#puts "Mouse : \"It's not correct, the answer is \"SOURIS\"\""
-				#over()
-			
+		if next_move.downcase != "souris" 
+			puts "Mouse : \"It's not correct\""
+			over()
+		else 
+			puts "Mouse : \"Well done !!!\""
+			puts ""
+			guessfour()
+		end
+	end
 end
-end
-
 
 
 def devinette
@@ -162,49 +116,37 @@ def devinette
 	i = rand(0..40)
 	#puts "#{i}"
 
+	while true
+		next_move = prompt().to_i
+		n = n + 1	
 
-while true
-	
-next_move = prompt().to_i
-n = n + 1
-	
+		if next_move == i and not guess
+			puts "Mouse :\"The number is #{i}, Well done !!!\""
+			puts ""
+			guess = true
+			french()
 
-	if next_move == i and not guess
-		puts "Mouse :\"The number is #{i}, Well done !!!\""
-		puts ""
-		guess = true
-		french()
-
-
-
-	elsif next_move > 0 and  next_move < i
-		if n == 5
-			puts "You lost the game"
-			puts "The number was #{i}"
-			over()
-		end # add ?
+		elsif next_move > 0 and  next_move < i
+			if n == 5
+				puts "You lost the game"
+				puts "The number was #{i}"
+				over()
+			end # add ?
 
 		puts "Mouse : \"The number you have to guess is bigger\""
 
-
-	elsif next_move > i && next_move < 50
-
-		if n == 5
-			puts "You lost the game"
-			puts "The number was #{i}"
-			over()
-
-		end 
+		elsif next_move > i && next_move < 50
+			if n == 5
+				puts "You lost the game"
+				puts "The number was #{i}"
+				over()
+			end 
 
 		puts "Mouse : \"The number you have to guess is smaller\""
 
-
-	else 
-	puts "Mouse : \"You have to guess a number between 0 and 45 !!!\""
-			
-	end
-
-	
+		else 
+			puts "Mouse : \"You have to guess a number between 0 and 45 !!!\""
+		end
 	end
 end
 
@@ -228,9 +170,7 @@ def deal
 		try()
 		deal()
 	end
-
 end
-
 
 def mouse 
 	puts "You see a mouse walking close to you"
@@ -256,8 +196,6 @@ def mouse
 	end 
 end
 
-
-
 def start
 	puts ""
 	puts "Boommm Badaboom Boom Boom !"
@@ -275,9 +213,7 @@ def start
 	puts "* 2 : You become scary, frantic , you're running behing a big rabish bins" 
 	puts "  "
 	
-
 	next_move = prompt()
-	
 
 	if next_move.include? "1"
 		puts "You look stupid ! someone pick you up and you didn't moove ! Well done, you will finish in Match Potatoes"
@@ -296,10 +232,7 @@ def start
 end
 
 
-
-
 start()
-
 
 
 
