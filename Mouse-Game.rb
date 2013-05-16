@@ -2,7 +2,7 @@ def prompt
 	print "> "
 	gets.chomp
 end
-
+#
 def try
 	puts "-------- Try again ---------"
 end
