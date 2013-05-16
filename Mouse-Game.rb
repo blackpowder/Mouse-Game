@@ -1,23 +1,23 @@
-def prompt()
+def prompt
 	print "> "
-	return gets.chomp
+	gets.chomp
 end
 
-def try()
+def try
 	puts "-------- Try again ---------"
 end
 
-def p()
+def p
 	print "> "
 end
 
-def over()
+def over
 	puts "You can't survive without the help of the mouse"
 	puts "Well done, Enjoy the Match potatoes!"
 	Process.exit(0)
 end
 
-def guessfour()
+def guessfour
 
 	puts "Mouse :\"Great ! Last steps ! You need to find the comunity code\""
 	puts "Mouse :\"You have to know this code if you want going in the way inside the wall\""
@@ -36,6 +36,7 @@ def guessfour()
 	#puts "#{a} #{b} #{c} #{d}"
 
 	numbers = [a, b , c, d]
+	#puts "#{numbers}"
 	
 	n = 0
 	patate = false
@@ -51,22 +52,22 @@ def guessfour()
 	guesses = next_move.split(//)
 	#puts "#{guesses}"
 	# check they have entered the correct number of guesses
-	
+	place = 0
 	guesses.each do |guess|
 		#puts "guess = #{guess}"
-		place = guesses.index(guess)
+		#place = guesses.index(guess)
 		#puts "place = #{place}"	
 		if numbers[place] == guess.to_i
 		correct_count+=1
 		#correct_count = correct_count + 1
 		end 
+		place += 1
 end
-		
 
 		if correct_count == 4
 			puts "Well done"
 			puts "Congratulation ! You found all answers !"
-			puts "You win the game !"
+			puts "You won the game !"
 			patate = true
 			Process.exit(0)
 		else
@@ -109,7 +110,7 @@ end
 
 
 
-def french()
+def french
 	puts "Mouse : \"I love Paris\""
 	puts "Mouse : \"Can you guess how do you say the word \"MOUSE\" in french ?\""
 	puts "Mouse : \"with 2 try\""
@@ -152,14 +153,14 @@ end
 
 
 
-def devinette()
+def devinette
 	puts "Mouse : \"Great ! We will start to play with my favorite game !\""
 	puts "Mouse : \"I'm thinking about a number between 1 and 45\"" 
 	puts "Mouse : \"You need to guess, you have 5 try !\""
 	guess = false
 	n = 0
 	i = rand(0..40)
-	puts "#{i}"
+	#puts "#{i}"
 
 
 while true
@@ -186,7 +187,7 @@ n = n + 1
 		puts "Mouse : \"The number you have to guess is bigger\""
 
 
-	elsif next_move > i and next_move < 50
+	elsif next_move > i && next_move < 50
 
 		if n == 5
 			puts "You lost the game"
@@ -207,10 +208,7 @@ n = n + 1
 	end
 end
 
-
-
-
-def deal()
+def deal
 	puts "The mouse answer to you"
 	puts "Mouse : \"Hey ! i know how stay in this house in security\""
 	puts "Mouse : \"But you should to play with me\""
@@ -234,9 +232,7 @@ def deal()
 end
 
 
-
-
-def mouse() 
+def mouse 
 	puts "You see a mouse walking close to you"
 	puts "What are you doing ?"
 	puts " * 1 : You flee"
@@ -262,7 +258,7 @@ end
 
 
 
-def start()
+def start
 	puts ""
 	puts "Boommm Badaboom Boom Boom !"
 	puts ".."*15
@@ -274,7 +270,8 @@ def start()
 	puts "You lost your mind for few minutes"
 	puts "When you're opening your eyes, you see that you're are in an unknown place."
 	puts "What do you do ?"
-	puts "* 1 : Watching around yourself and try to understand what it has been happenned and why not find something clever to do ?"
+	puts "* 1 : Watching around yourself and try to understand what it has been happenned"
+	puts "and why not find something clever to do ?"
 	puts "* 2 : You become scary, frantic , you're running behing a big rabish bins" 
 	puts "  "
 	
@@ -287,8 +284,9 @@ def start()
 		Process.exit(0)
 
 	elsif next_move.include? "2"
-		puts "hiding you have time to remember and watching. You're falling down from a shoping bag. And you see a Lady starting to make dinner. \n
-==>  So you're are a litle potatoes in a big, wild and dangerous house,  try to stay alive without people pick you up and finish in Match potaoes !"
+		puts "hiding you have time to remember and watching. You're falling down from a shoping bag. And you see a Lady starting to make dinner."
+		puts "==> So you're are a litle potatoes in a big, wild and dangerous house,"  
+		puts "try to stay alive without people pick you up and without finish in Match potaoes !"
 		mouse()
 	else 
 		try()
