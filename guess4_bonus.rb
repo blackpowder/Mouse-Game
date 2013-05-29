@@ -13,8 +13,8 @@ class Guess4_bonus < Room
 		d = rand(1...10)
 
 		numbers = [a, b , c, d]
-		puts "#{numbers}"	
-		n = 0
+		#puts "#{numbers}"	
+		n = 1
 		patate = false
 
 		while true

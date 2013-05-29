@@ -16,8 +16,8 @@ class Guessfour < Room
 		d = rand(1...10)
 		#puts "#{a} #{b} #{c} #{d}"
 		numbers = [a, b , c, d]
-		puts "#{numbers}"	
-		n = 0
+		#puts "#{numbers}"	
+		n = 1
 		patate = false
 
 		while true
