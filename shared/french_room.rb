@@ -1,0 +1,3 @@
+class FrenchRoom < Room
+
+end

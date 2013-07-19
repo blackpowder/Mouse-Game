@@ -9,8 +9,10 @@ require "./won"
 
 class Game
 	def start
-		first_room = Boombadaboom.new
-		first_room.enter
+		#first_room = Boombadaboom.new
+		#first_room.enter
+
+    French.new.action
 	end 
 end
 
