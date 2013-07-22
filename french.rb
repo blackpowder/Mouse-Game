@@ -1,7 +1,7 @@
 require "./dict"
+require_relative "lib/french_room"
 
-
-class French < Room
+class French < FrenchRoom
 	
 	def action
 		
@@ -10,10 +10,8 @@ class French < Room
 		answer = word.french
 		shaffle = word.letters
 
-		puts ""
-		puts "Mouse : \"I love Paris\""
-		puts "Mouse : \"Can you guess how to say the word \"#{english_word}\" in french ?\""
-		puts "Mouse : \"with 2 try\""
+    puts "Mouse : \"I love Paris\""
+    puts_challenge(english_word)
 
 		next_move = prompt()
 
