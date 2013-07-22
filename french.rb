@@ -11,7 +11,7 @@ class French < FrenchRoom
 		shaffle = word.letters
 
     puts "Mouse : \"I love Paris\""
-    puts_challenge(english_word)
+    puts challenge(english_word)
 
 		next_move = prompt()
 

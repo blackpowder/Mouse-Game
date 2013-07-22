@@ -10,7 +10,7 @@ class Fr < FrenchRoom
 		answer = word.french
 		shaffle = word.letters
 
-    puts_challenge(english_word)
+    puts challenge(english_word)
 		puts "/_\\ Type [0] if you want return to the Bonus list/_\\"
 
 		next_move = prompt
