@@ -8,7 +8,7 @@ class French < FrenchRoom
 		word = Dict.new
 		english_word = word.english
 		answer = word.french
-		shaffle = word.letters
+		shuffle = word.letters
 
     puts "Mouse : \"I love Paris\""
     puts challenge(english_word)
@@ -24,7 +24,7 @@ class French < FrenchRoom
 		else 
 			puts "Mouse : \"Try again !\""
 			puts "Mouse : \"I will give you the letters, you just need to find the correct order :\""
-			puts "Mouse : \"#{shaffle}"
+			puts "Mouse : \"#{shuffle}"
 			next_move = prompt()
 
 			if next_move.upcase.include? "#{answer}" 

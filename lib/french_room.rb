@@ -6,4 +6,13 @@ class FrenchRoom < Room
     lines <<  'Mouse : "with 2 try"'
     lines.join("\n")
   end
+
+  def try_again(shuffle)
+    lines = [""]
+    lines << "Mouse : \"Try again !\""
+    lines << "Mouse : \"I will give you the letters\""
+    lines << "Mouse : \"You just need to figure out the correct order :\""
+    lines << "Mouse : \"#{shuffle}\""
+    lines.join("\n")
+  end
 end

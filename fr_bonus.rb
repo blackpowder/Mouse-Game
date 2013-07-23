@@ -8,7 +8,7 @@ class Fr < FrenchRoom
 		word = Dict.new
 		english_word = word.english
 		answer = word.french
-		shaffle = word.letters
+		shuffle = word.letters
 
     puts challenge(english_word)
 		puts "/_\\ Type [0] if you want return to the Bonus list/_\\"
@@ -23,12 +23,8 @@ class Fr < FrenchRoom
 			options = Won.new
 			options.again
 
-		else 
-			puts ""
-			puts "Mouse : \"Try again !\""
-			puts "Mouse : \"I will give you the letters\""
-			puts "Mouse : \"You just need to figure out the correct order :\""
-			puts "Mouse : \"#{shaffle}"
+    else
+      puts try_again(shuffle)
 			next_move = prompt
 
 			if next_move.upcase.include? "#{answer}" 
