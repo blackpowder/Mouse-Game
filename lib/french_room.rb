@@ -22,4 +22,8 @@ class FrenchRoom < Room
     lines << "Mouse : \"The answer was #{answer}\""
     lines.join("\n")
   end
+
+  def correct_answer?(next_move, answer)
+    next_move.upcase.include? "#{answer}"
+  end
 end

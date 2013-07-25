@@ -15,7 +15,7 @@ class FrenchBonus < FrenchRoom
 
 		next_move = prompt
 
-		if next_move.upcase.include? "#{answer}" 
+		if correct_answer?(next_move, answer)
 			puts "Mouse : \"Well done !!!\""
 			action()
 
@@ -27,7 +27,7 @@ class FrenchBonus < FrenchRoom
       puts try_again(shuffle)
 			next_move = prompt
 
-			if next_move.upcase.include? "#{answer}" 
+			if correct_answer?(next_move, answer)
 				puts "Mouse : \"Well done !!!\""
 				puts ""
 

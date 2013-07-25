@@ -15,7 +15,7 @@ class French < FrenchRoom
 
 		next_move = prompt()
 
-		if next_move.upcase.include? "#{answer}" 
+		if correct_answer?(next_move, answer)
 			puts "Mouse : \"Well done !!!\""
 
 			room = Guessfour.new
@@ -25,7 +25,7 @@ class French < FrenchRoom
       puts try_again(shuffle)
 			next_move = prompt()
 
-			if next_move.upcase.include? "#{answer}" 
+			if correct_answer?(next_move, answer)
 				puts "Mouse : \"Well done !!!\""
 				puts ""
 
