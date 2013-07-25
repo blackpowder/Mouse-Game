@@ -1,7 +1,7 @@
 require "./dict"
 require_relative "lib/french_room"
 
-class Fr < FrenchRoom
+class FrenchBonus < FrenchRoom
 	
 	def action
 		

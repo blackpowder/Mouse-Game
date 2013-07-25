@@ -20,7 +20,7 @@ class Won < Room
 			devinette.action		
 
 		elsif next_move.include? "2"
-			french = Fr.new
+			french = FrenchBonus.new
 			french.action
 
 		elsif next_move.include? "3"

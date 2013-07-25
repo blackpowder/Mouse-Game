@@ -21,10 +21,8 @@ class French < FrenchRoom
 			room = Guessfour.new
 			room.action
 
-		else 
-			puts "Mouse : \"Try again !\""
-			puts "Mouse : \"I will give you the letters, you just need to find the correct order :\""
-			puts "Mouse : \"#{shuffle}"
+    else
+      puts try_again(shuffle)
 			next_move = prompt()
 
 			if next_move.upcase.include? "#{answer}" 
