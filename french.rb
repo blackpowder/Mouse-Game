@@ -2,9 +2,11 @@ require "./dict"
 require_relative "lib/french_room"
 
 class French < FrenchRoom
+  def initialize
+    @next_room = Guessfour
+  end
 	
 	def action
-		
 		word = Dict.new
 		english_word = word.english
 		answer = word.french
@@ -16,27 +18,19 @@ class French < FrenchRoom
 		next_move = prompt()
 
 		if correct_answer?(next_move, answer)
-			puts "Mouse : \"Well done !!!\""
-
-			room = Guessfour.new
-			room.action
+      go_to_next_room
 
     else
       puts try_again(shuffle)
 			next_move = prompt()
 
 			if correct_answer?(next_move, answer)
-				puts "Mouse : \"Well done !!!\""
-				puts ""
-
-				room = Guessfour.new
-				room.action
-
+        go_to_next_room
 			else
 				puts incorrect_answer(answer)
 				over 
 			end
 		end
-	 end
+  end
 end
 

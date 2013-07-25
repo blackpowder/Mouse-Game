@@ -2,6 +2,9 @@ require "./dict"
 require_relative "lib/french_room"
 
 class FrenchBonus < FrenchRoom
+  def initialize
+    @next_room = FrenchBonus
+  end
 	
 	def action
 		
@@ -16,8 +19,7 @@ class FrenchBonus < FrenchRoom
 		next_move = prompt
 
 		if correct_answer?(next_move, answer)
-			puts "Mouse : \"Well done !!!\""
-			action()
+      go_to_next_room
 
 		elsif next_move == "0"
 			options = Won.new
@@ -28,10 +30,7 @@ class FrenchBonus < FrenchRoom
 			next_move = prompt
 
 			if correct_answer?(next_move, answer)
-				puts "Mouse : \"Well done !!!\""
-				puts ""
-
-				action
+        go_to_next_room
 
 			elsif next_move == "0"
         options = Won.new
@@ -43,5 +42,5 @@ class FrenchBonus < FrenchRoom
 				action 
 			end
 		end
-	 end
+  end
 end

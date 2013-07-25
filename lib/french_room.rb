@@ -23,7 +23,18 @@ class FrenchRoom < Room
     lines.join("\n")
   end
 
+  def correct_answer
+    lines = ["Mouse : \"Well done !!!\""]
+    lines << ""
+    lines.join("\n")
+  end
+
   def correct_answer?(next_move, answer)
     next_move.upcase.include? "#{answer}"
+  end
+
+  def go_to_next_room
+    puts correct_answer
+    @next_room.new.action
   end
 end
