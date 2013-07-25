@@ -15,4 +15,11 @@ class FrenchRoom < Room
     lines << "Mouse : \"#{shuffle}\""
     lines.join("\n")
   end
+
+  def incorrect_answer(answer)
+    lines =  [""]
+    lines << "Mouse : \"It's not correct\""
+    lines << "Mouse : \"The answer was #{answer}\""
+    lines.join("\n")
+  end
 end

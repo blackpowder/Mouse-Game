@@ -33,8 +33,7 @@ class French < FrenchRoom
 				room.action
 
 			else
-				puts "Mouse : \"It's not correct\""
-				puts "The answer was #{answer}"
+				puts incorrect_answer(answer)
 				over 
 			end
 		end

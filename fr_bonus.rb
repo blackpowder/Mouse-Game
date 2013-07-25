@@ -34,13 +34,11 @@ class FrenchBonus < FrenchRoom
 				action
 
 			elsif next_move == "0"
-			options = Won.new
-			options.again
+        options = Won.new
+        options.again
 
 			else
-				puts ""
-				puts "Mouse : \"It's not correct\""
-				puts "The answer was #{answer}"
+				puts incorrect_answer(answer)
 				try
 				action 
 			end

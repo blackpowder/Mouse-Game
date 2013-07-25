@@ -12,7 +12,7 @@ class Game
 		#first_room = Boombadaboom.new
 		#first_room.enter
 
-    French.new.action
+    FrenchBonus.new.action
 	end 
 end
 
