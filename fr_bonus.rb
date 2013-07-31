@@ -1,19 +1,13 @@
-require "./dict"
 require_relative "lib/french_room"
 
 class FrenchBonus < FrenchRoom
   def initialize
     @next_room = FrenchBonus
+    super
   end
 	
 	def action
-		
-		word = Dict.new
-		english_word = word.english
-		answer = word.french
-		shuffle = word.letters
-
-    puts challenge(english_word)
+    puts challenge
 		puts "/_\\ Type [0] if you want return to the Bonus list/_\\"
 
 		next_move = prompt
@@ -26,7 +20,7 @@ class FrenchBonus < FrenchRoom
 			options.again
 
     else
-      puts try_again(shuffle)
+      puts try_again
 			next_move = prompt
 
 			if correct_answer?(next_move, answer)
@@ -37,7 +31,7 @@ class FrenchBonus < FrenchRoom
         options.again
 
 			else
-				puts incorrect_answer(answer)
+				puts incorrect_answer
 				try
 				action 
 			end
