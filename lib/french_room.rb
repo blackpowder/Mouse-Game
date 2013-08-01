@@ -53,4 +53,36 @@ class FrenchRoom < Room
   def shuffle
     @word.letters
   end
+
+  def action
+    check_answer(prompt)
+  end
+
+  def check_answer(next_move)
+    if next_move == @escape_code
+      escape_room
+    elsif correct_answer?(next_move, answer)
+      go_to_next_room
+    else
+      puts try_again
+    	next_move = prompt()
+
+    	if correct_answer?(next_move, answer)
+       go_to_next_room
+      elsif next_move == @escape_code
+        escape_room
+      else
+        failed_room
+    	end
+    end
+  end
+
+  def failed_room
+    puts incorrect_answer
+    over
+  end
+
+  def escape_room
+    @escape_room.new.again
+  end
 end

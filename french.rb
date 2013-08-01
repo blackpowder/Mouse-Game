@@ -9,23 +9,7 @@ class French < FrenchRoom
 	def action
     puts "Mouse : \"I love Paris\""
     puts challenge
-
-		next_move = prompt()
-
-		if correct_answer?(next_move, answer)
-      go_to_next_room
-
-    else
-      puts try_again
-			next_move = prompt()
-
-			if correct_answer?(next_move, answer)
-        go_to_next_room
-			else
-				puts incorrect_answer
-				over 
-			end
-		end
+    super
   end
 end
 
