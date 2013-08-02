@@ -36,7 +36,7 @@ class FrenchRoom < Room
   end
 
   def correct_answer?(next_move, answer)
-    next_move.upcase.include? "#{answer}" #todo - fix this bug
+    next_move.upcase == answer #todo - fix this bug
   end
 
   def go_to_next_room
