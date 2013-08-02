@@ -8,7 +8,7 @@ class French < FrenchRoom
 
 	def action
     puts "Mouse : \"I love Paris\""
-    puts challenge
+    puts @messager.challenge
     super
   end
 end

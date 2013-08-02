@@ -9,13 +9,13 @@ class FrenchBonus < FrenchRoom
   end
 
   def action
-    puts challenge
+    puts @messager.challenge
     puts "/_\\ Type [#{@escape_code}] if you want return to the Bonus list/_\\"
     super
   end
 
   def failed_room
-    puts incorrect_answer
+    puts @messager.incorrect_answer
     try
     initialize
     action
