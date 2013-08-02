@@ -17,6 +17,7 @@ class FrenchBonus < FrenchRoom
   def failed_room
     puts incorrect_answer
     try
+    initialize
     action
   end
 end
