@@ -19,7 +19,6 @@ class Dict
       		"Knee Genou",
       		"Leader Meneur",
       		"Right Droit",
-      		"bleu blue",
       		"red rouge",
       		"dirty sale",
       		"clean propre",
