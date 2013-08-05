@@ -19,22 +19,20 @@ class FrenchRoom < Room
   end
 
   def action
-    next_move = prompt
+    check_answer do
+      puts @messager.try_again
+      check_answer {failed_room}
+    end
+  end
+
+  def check_answer
+    next_move = prompt()
     if next_move == @escape_code
       escape_room
     elsif correct_answer?(next_move, @word.french)
       go_to_next_room
     else
-      puts @messager.try_again
-    	next_move = prompt()
-
-    	if correct_answer?(next_move, @word.french)
-       go_to_next_room
-      elsif next_move == @escape_code
-        escape_room
-      else
-        failed_room
-    	end
+      yield
     end
   end
 
