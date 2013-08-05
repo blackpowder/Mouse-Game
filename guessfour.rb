@@ -1,5 +1,6 @@
+require_relative "lib/guess_room"
 
-class Guessfour < Room
+class Guessfour < GuessRoom
 
 	def action
 		puts ""
@@ -7,16 +8,9 @@ class Guessfour < Room
 		puts "Mouse :\"You have to know this code if you want access to the safe area inside the wall\""
 		puts "Mouse :\"It's 4 digit code with numbers between 0 and 10\""
 		puts "Mouse :\"Give me this numbers in the correct order\""
-		puts "Mouse :\"Don't write any spaces between each numbers:\""
-		puts "Mouse :\"You have 13 tries :\""
+		puts rules
 		puts ""
-		a = rand(1...10)
-		b = rand(1...10)
-		c = rand(1...10)
-		d = rand(1...10)
-		#puts "#{a} #{b} #{c} #{d}"
-		numbers = [a, b , c, d]
-		#puts "#{numbers}"	
+		ramdom
 		n = 1
 		patate = false
 
@@ -34,7 +28,7 @@ class Guessfour < Room
 			place = 0
 			guesses.each do |guess|
 
-			correct_count+=1 if numbers[place] == guess.to_i
+			correct_count+=1 if @numbers[place] == guess.to_i
 
 				#if numbers[place] == guess.to_i
 				#	correct_count+=1
@@ -62,27 +56,11 @@ class Guessfour < Room
 				end
 
 				if n == 13
-					puts "You lost! The answer was #{a} #{b} #{c} #{d}"
+					puts "You lost! The answer was #{@numbers.join(" ")}"
 
 					over()
 				end
 			end
 		end
-	end
-
-	def valid_input? guesses
-		if guesses.length != 4
-			puts "Mouse :\"Hey! This code include 4 numbers, no more, no less !\""
-			return false
-		end
-		guesses.each do |guess|
-			#puts guess
-			unless ("1"..."10").include? guess
-				puts "Mouse :\"Hey ! This code includes just numbers from 1 to 9 !\""
-				return false
-				#return false unless (0...10).include? guess.to_i
-			end	
-		end
-		true
 	end
 end
