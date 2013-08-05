@@ -30,12 +30,4 @@ class GuessRoom < Room
 
 		@numbers = [a, b , c, d]
 	end
-
-
-
-
-
-
-
-
 end

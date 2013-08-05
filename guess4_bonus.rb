@@ -12,9 +12,6 @@ class Guess4_bonus < GuessRoom
 		n = 1
 		patate = false
 
-
-
-
 		while true
 			print " Try #{n} "
 			next_move = prompt()
